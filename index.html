@@ -1,56 +1,39 @@
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title>Coffee Junkie</title>
-    </head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 8,
+        });
+      }
+    </script>
+  </head>
   <body>
-    <img src="./images/coffee_cup.png" id="logo" width="100" alt="Coffee cup">
-    <h3>Coffee Junkie</h3>
-    <h4>Home</h4>
-
-    <ul>
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./about.html">About</a></li>
-      <li><a href="./numbers.html">Numbers</a></li>
-      <li><a href="./contact.html">Contact</a></li>
-    </ul>
-<img src="./images/background.jpeg" width="100%"" alt="coffee beans">
-<br>
-  <h1>Featured Products</h1>
-  <br>
-  <!-- house blend -->
-  <h2>House blend</h2>
-  <img src="./images/house_blend.jpeg" width="30%"" alt="house blend">
-  <p style="width:50%">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <h3><a href="https://www.wikipedia.org/" target="_blank">Details</a></h3>
-  <br>
-  <br>
-  <!-- columbian -->
-  <h2>Columbian roast</h2>
-  <img src="./images/columbian.jpeg" width="30%"" alt="Columbian">
-  <p style="width:50%">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <h3><a href="https://www.wikipedia.org/" target="_blank">Details</a></h3>
-<br>
-<br>
-
-  <!-- french roast -->
-  <h2>French Roast</h2>
-  <img src="./images/french_roast" width="30%"" alt="french roast">
-  <p style="width:50%">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <h3><a href="https://www.wikipedia.org/" target="_blank">Details</a></h3>
-  <br>
-  <br>
-  <br>
-  <br>
-  <p>copyright&copy:2020</p>
-  <h4><a href="#logo">Back to the Top</a></h4>
+    <div id="map"></div>
   </body>
 </html>
